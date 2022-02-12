@@ -1,9 +1,12 @@
 package br.gov.sp.fatec.swillo.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -34,5 +37,9 @@ public class User {
             joinColumns = { @JoinColumn(name = "usr_id") },
             inverseJoinColumns = { @JoinColumn(name = "aut_id") })
     private Set<Autorization> autorizations;
+
+    @JsonIgnore
+    @OneToMany(mappedBy="user")
+    private List<Orders> orders = new ArrayList<>();
 
 }

@@ -6,6 +6,7 @@ import br.gov.sp.fatec.swillo.services.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 @Service
 public class ProductsServiceImpl implements ProductsService {
@@ -13,6 +14,10 @@ public class ProductsServiceImpl implements ProductsService {
     private ProductsRepository productsRepository;
     public Products createProduct(Products products) {
         return productsRepository.save(products);
+    }
+
+    public List<Products> listAllProducts() {
+        return productsRepository.findAll();
     }
 
     public Products findByName(String name) {

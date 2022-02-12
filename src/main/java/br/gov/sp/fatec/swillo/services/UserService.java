@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 public interface UserService {
     public User createUser(User user);
     public User findByName(String name);
+    public User findById(Long id);
     public void removeById(Long id);
     public User updateById(User user) throws Exception;
 }

@@ -21,6 +21,10 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByName(name);
     }
 
+    public User findById(Long id) {
+        return userRepository.findById(id).orElseThrow();
+    }
+
     public void removeById(Long id) {
         userRepository.deleteById(id);
     }
