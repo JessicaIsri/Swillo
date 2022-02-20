@@ -76,9 +76,9 @@ class SwilloApplicationTests {
 		products.setCategory(CategoryEnum.IPA);
 		products.setValue(15.0);
 		Products productCreated = productsService.createProduct(products);
-		productCreated.setCategory(CategoryEnum.APA);
+		productCreated.setCategory(CategoryEnum.IPA);
 		Products productUpdate = productsService.updateProduct(productCreated);
-		assertEquals(CategoryEnum.APA, productUpdate.getCategory());
+		assertEquals(CategoryEnum.IPA, productUpdate.getCategory());
 		productsService.deleteProductById(productCreated.getId());
 
 	}
