@@ -23,6 +23,19 @@ public class Products {
     @Column(name = "pr_value")
     private Double value;
 
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "image")
+    private String image;
+
+    @Column(name = "ibu")
+    private Double ibu;
+
+
+    @Column(name = "alcool")
+    private Double alcool;
+
 
     @Column(name = "pr_category")
     private CategoryEnum category;
